@@ -114,7 +114,7 @@ void BleKeyboard::begin(void)
 
   outputKeyboard->setCallbacks(this);
 
-  hid->manufacturer()->setValue(deviceManufacturer);
+  hid->manufacturer()->setValue(String(deviceManufacturer.c_str()));
 
   hid->pnp(0x02, vid, pid, version);
   hid->hidInfo(0x00, 0x01);
