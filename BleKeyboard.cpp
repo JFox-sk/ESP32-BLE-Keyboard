@@ -103,7 +103,7 @@ BleKeyboard::BleKeyboard(std::string deviceName, std::string deviceManufacturer,
 
 void BleKeyboard::begin(void)
 {
-  BLEDevice::init(deviceName);
+  BLEDevice::init(String(deviceName.c_str()));
   BLEServer* pServer = BLEDevice::createServer();
   pServer->setCallbacks(this);
 
